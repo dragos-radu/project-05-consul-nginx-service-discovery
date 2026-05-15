@@ -59,3 +59,16 @@ Inbound access:
 - HTTP allowed publicly on port 80
 - Consul UI allowed only from my public IP on port 8500
 - Consul internal ports allowed only inside the Security Group
+
+
+## Consul Server
+
+The `consul-lb` instance runs a single-node Consul server.
+
+Consul is configured with:
+- one server node
+- Consul UI enabled
+- client access on all interfaces
+- private IP used as bind address
+
+The Consul UI is available on port `8500`, restricted by the Security Group to my public IP.

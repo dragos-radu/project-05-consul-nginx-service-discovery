@@ -72,3 +72,13 @@ Consul is configured with:
 - private IP used as bind address
 
 The Consul UI is available on port `8500`, restricted by the Security Group to my public IP.
+
+## Backend Service Registration
+
+The `web1` and `web2` instances run Nginx as backend web servers.
+
+Each backend runs a Consul agent that joins the Consul server using the private IP of `consul-lb`.
+
+Both backends register the same service name, `web`, on port `80`.
+
+Consul health checks monitor the local Nginx service through HTTP checks on `localhost`.

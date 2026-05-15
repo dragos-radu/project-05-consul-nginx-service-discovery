@@ -1,0 +1,11 @@
+{
+  "service": {
+    "name": "web",
+    "tags": ["nginx", "web2"],
+    "port": 80,
+    "check": {
+      "http": "http://localhost",
+      "interval": "10s"
+    }
+  }
+}

@@ -43,3 +43,19 @@ Epic: **DEVOPS-20** – Configure Service Discovery with Consul and Nginx
 ## Status
 
 In progress
+
+## AWS Infrastructure
+
+The project uses three Ubuntu EC2 instances in the same VPC and Security Group.
+
+| Instance | Role |
+|---|---|
+| consul-lb | Consul server, Nginx load balancer, Consul Template |
+| web1 | Nginx backend and Consul agent |
+| web2 | Nginx backend and Consul agent |
+
+Inbound access:
+- SSH allowed only from my public IP
+- HTTP allowed publicly on port 80
+- Consul UI allowed only from my public IP on port 8500
+- Consul internal ports allowed only inside the Security Group
